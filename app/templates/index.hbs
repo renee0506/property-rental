@@ -1,17 +1,25 @@
 <h1> Welcome to Super Rentals </h1>
 
 <p>We hope you find exactly what you're looking for in a place to stay.</p>
-
+<h2>Rentals:</h2>
 <ul>
-  {{#each model as |rental|}}
+  {{#each model.rental as |rental|}}
      <li>{{rental-tile rental=rental destroyRental="destroyRental"}}</li>
      <!-- //rental-in-component=rental-from-template -->
      <!-- //Component variable name = Variable name assigned to the object -->
      <!-- When we say destroyRental="destroyRental", we are mapping the destroyRental() action coming up from the component (on the left of = ) to the destroyRental() action on the route handler. -->
   {{/each}}
 </ul>
+<h2>Announcements:</h2>
+<ul>
+  {{#each model.announcement as |announcement|}}
+    <li>{{announcement-tile announcement= announcement destroyAnnouncement = "destroyAnnouncement"}}</li>
+  {{/each}}
+</ul>
 
 {{new-rental saveRental2="saveRental3"}}
+{{new-announcement saveAnnouncement2="saveAnnouncement3"}}
 
 {{#link-to 'about'}}About{{/link-to}}
-{{#link-to 'contact'}}Click here to contact us.{{/link-to}}
+{{#link-to 'contact'}}Click here to contact us{{/link-to}}
+<!-- {{#link-to 'announcement'}}Important announcements{{/link-to}} -->

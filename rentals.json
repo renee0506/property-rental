@@ -1,4 +1,10 @@
-{ "rentals": [{
+{
+
+  "announcements": [{
+    "date": "March 20,2017",
+    "description": "Sunny Days in Seattle"
+    }],
+  "rentals": [{
     "owner": "Veruca Salt",
     "city": "San Francisco",
     "type": "Estate",
