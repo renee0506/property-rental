@@ -4,9 +4,14 @@
 
 <ul>
   {{#each model as |rental|}}
-     <li>{{rental.owner}}'s {{rental.type}} in {{rental.city}}</li>
+     <li>{{rental-tile rental=rental destroyRental="destroyRental"}}</li>
+     <!-- //rental-in-component=rental-from-template -->
+     <!-- //Component variable name = Variable name assigned to the object -->
+     <!-- When we say destroyRental="destroyRental", we are mapping the destroyRental() action coming up from the component (on the left of = ) to the destroyRental() action on the route handler. -->
   {{/each}}
 </ul>
+
+{{new-rental saveRental2="saveRental3"}}
 
 {{#link-to 'about'}}About{{/link-to}}
 {{#link-to 'contact'}}Click here to contact us.{{/link-to}}
